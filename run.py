@@ -2,14 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from levenshteinDistance import editDistance
-from scipy.spatial.distance import pdist
-from scipy.cluster.hierarchy import linkage, dendrogram
-from jellyfish import jaro_distance
-import numpy as np 
-import matplotlib.pyplot as plt
-from matplotlib import style
-style.use('ggplot')
-
 
 def main(datafile):
     list = []
