@@ -10,7 +10,7 @@ def main(datafile):
     
     for i in range(0, len(data_list)):
         pivot = data_list[i]
-        for j in range(i, len(data_list)):
+        for j in range(0, len(data_list)):
             ret = editDistance(pivot, data_list[j])
             print('n{}, n{} : {}'.format(i, j, ret))
             list.append(ret)
