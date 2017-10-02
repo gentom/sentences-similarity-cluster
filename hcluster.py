@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 from levenshteinDistance import editDistance
-from scipy.cluster.hierarchy import ward, dendrogram
+from scipy.cluster.hierarchy import ward, dendrogram, linkage
 import matplotlib.pyplot as plt 
+
 
 def main(datafile):
     list = []
     ret_list = []
     data_list = [line.rstrip('\n') for line in open(datafile)]
-    #print(data_list)
     len_list = len(data_list)
     for i in range(0, len(data_list)):
         pivot = data_list[i]
@@ -26,5 +26,6 @@ def main(datafile):
 
 dist = main('./dataset/dummydata.csv')
 linkage_matrix = ward(dist)
-print('----------------------')
 print(linkage_matrix)
+dendrogram(linkage_matrix)
+plt.show()
