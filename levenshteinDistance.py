@@ -5,8 +5,6 @@ def editDistance(s1, s2):
     if len(s1) > len(s2):
         s1, s2 = s2, s1
 
-    # リストの値はid番号で管理する
-    #print('{}, {}'.format(s1,s2))
     distances = range(len(s1) + 1)
     for i2, c2 in enumerate(s2):
         distances_ = [i2+1]
