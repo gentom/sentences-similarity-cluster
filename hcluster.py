@@ -27,5 +27,6 @@ def main(datafile):
 dist = main('./dataset/dummydata.csv')
 linkage_matrix = ward(dist)
 print(linkage_matrix)
-dendrogram(linkage_matrix)
+lbl = ['a','b','c','d','e','f']
+dendrogram(linkage_matrix, labels=lbl)
 plt.show()
