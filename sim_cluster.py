@@ -12,11 +12,12 @@ def HierarchicalCluster(datafile):
     data_list = [line.rstrip('\n') for line in open(datafile)]
     data_list = [line.split(",") for line in data_list]
     print(data_list)
+    len_list = len(data_list)
     label_list = [data_list[l][0] for l in range(0,len(data_list))]
     text_list = [data_list[l][1] for l in range(0,len(data_list))]
     print(label_list)
-    len_list = len(data_list)
-    for i in range(0, len(data_list)):
+    print(text_list)
+    for i in range(0, len_list):
         pivot = text_list[i]
         for j in range(0, len_list):
             sim = editDistance(pivot, text_list[j]) # calcurate similarity(distance)
