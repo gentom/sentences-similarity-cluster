@@ -8,7 +8,7 @@ python sim_cluster.py your_file
 ```
 ## Example
 ### 1. Prepare the data file
-./dataset/dummydata.csv
+./data/dummydata.csv
 ```
 A,helloworld
 B,hallawerld
