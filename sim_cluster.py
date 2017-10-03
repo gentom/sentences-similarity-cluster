@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from levenshteinDistance import editDistance
-from scipy.cluster.hierarchy import ward, dendrogram, linkage
+from scipy.cluster.hierarchy import ward, dendrogram
 import matplotlib.pyplot as plt 
+import sys
 
 
 def HierarchicalCluster(datafile):
@@ -17,6 +18,7 @@ def HierarchicalCluster(datafile):
     text_list = [data_list[l][1] for l in range(0,len(data_list))]
     print(label_list)
     print(text_list)
+
     for i in range(0, len_list):
         pivot = text_list[i]
         for j in range(0, len_list):
@@ -26,6 +28,7 @@ def HierarchicalCluster(datafile):
             if j == len_list-1:
                 sim_matrix.append(list)
                 list = []
+                
     print('-------------------------')
     print('matrix: {}'.format(sim_matrix))
     linkage_matrix = ward(sim_matrix)
@@ -34,5 +37,4 @@ def HierarchicalCluster(datafile):
     dendrogram(linkage_matrix, labels=label_list)
     plt.show()
     
-
-HierarchicalCluster('./dataset/dummydata.csv')
+HierarchicalCluster(sys.argv[1])
