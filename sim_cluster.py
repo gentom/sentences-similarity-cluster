@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from levenshteinDistance import editDistance
+from levenshtein import editDistance, distance
 from scipy.cluster.hierarchy import ward, dendrogram
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import sys
 
 
@@ -22,13 +22,13 @@ def HierarchicalCluster(datafile):
     for i in range(0, len_list):
         pivot = text_list[i]
         for j in range(0, len_list):
-            sim = editDistance(pivot, text_list[j]) # calcurate similarity(distance)
+            sim = distance(pivot, text_list[j]) # calcurate similarity(distance)
             print('n{}, n{} : {}'.format(i, j, sim))
             list.append(sim)
             if j == len_list-1:
                 sim_matrix.append(list)
                 list = []
-                
+
     print('-------------------------')
     print('matrix: {}'.format(sim_matrix))
     linkage_matrix = ward(sim_matrix)
@@ -36,5 +36,5 @@ def HierarchicalCluster(datafile):
     print(linkage_matrix)
     dendrogram(linkage_matrix, labels=label_list)
     plt.show()
-    
+
 HierarchicalCluster(sys.argv[1])
