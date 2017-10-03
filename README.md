@@ -12,6 +12,7 @@ E,galloworld
 F,herroworld
 ```
 ### 2. Execute  
+example
 ```
-python sim_cluster.py
+python sim_cluster.py ./dataset/dummydata.csv
 ```
