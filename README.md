@@ -1,7 +1,7 @@
 # similarity-cluster
 sim_cluster.py calculates the similarity of text data(from file) using Levenshtein distance and clusters(hierarchical clustering) the result. Clustering results are displayed with dendrogram.  
 ## Usage
-### 1. Prepare your data file 
+### 1. Prepare your data file
 ### 2. Execute  
 ```
 python sim_cluster.py your_file
@@ -19,7 +19,7 @@ F,herroworld
 ```
 ### 2. Execute
 ```
-python sim_cluster.py ./dataset/dummydata.csv
+python sim_cluster.py ./data/dummydata.csv
 ```
 ### 3. Result
 ![result](https://github.com/gentom/similarity-cluster/blob/master/img/hclustering_result.png)
