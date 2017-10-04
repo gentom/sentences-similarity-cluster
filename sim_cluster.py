@@ -8,7 +8,7 @@ import sys
 
 
 def HierarchicalCluster(datafile):
-    list = []
+    sim_list = []
     sim_matrix = []
     data_list = [line.rstrip('\n') for line in open(datafile)]
     data_list = [line.split(",") for line in data_list]
@@ -24,10 +24,10 @@ def HierarchicalCluster(datafile):
         for j in range(0, len_list):
             sim = distance(pivot, text_list[j]) # calcurate similarity(distance)
             print('n{}, n{} : {}'.format(i, j, sim))
-            list.append(sim)
+            sim_list.append(sim)
             if j == len_list-1:
-                sim_matrix.append(list)
-                list = []
+                sim_matrix.append(sim_list)
+                sim_list = []
 
     print('-------------------------')
     print('matrix: {}'.format(sim_matrix))
