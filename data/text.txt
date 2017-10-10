@@ -1,0 +1,6 @@
+A   helloworldハローワールド
+B   hallawerldハラウェールド
+C   helldwoodyヘルードウーディ
+D   hallowarldハァローワァールド
+E   galloworldガローワールド
+F   herroworldヘローワールド
