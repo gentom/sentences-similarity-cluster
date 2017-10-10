@@ -5,13 +5,13 @@ from levenshtein import editDistance, distance
 from scipy.cluster.hierarchy import ward, dendrogram
 import matplotlib.pyplot as plt
 import sys
-
+import codecs
 
 def HierarchicalCluster(datafile):
     sim_list = []
     sim_matrix = []
-    data_list = [line.rstrip('\n') for line in open(datafile)]
-    data_list = [line.split(",") for line in data_list]
+    data_list = [line.rstrip('\n') for line in codecs.open(datafile, "r", "utf-8")]
+    data_list = [line.split('\t') for line in data_list]
     print(data_list)
     len_list = len(data_list)
     label_list = [data_list[l][0] for l in range(0,len(data_list))]
