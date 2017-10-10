@@ -18,7 +18,7 @@ def editDistance(s1, s2):
 
 def distance(s1,s2):
     if len(s1) < len(s2):
-        return levenshtein(s2, s1)
+        return distance(s2, s1)
 
     # len(s1) >= len(s2)
     if len(s2) == 0:
