@@ -1,13 +1,47 @@
-# similarity-cluster
-sim_cluster.py calculates the similarity of text data(from file) using Levenshtein distance and clusters(hierarchical clustering) the result. Clustering results are displayed with dendrogram.  
+# sentences-similarity-cluster
+sensim_cluster calculates the similarity of text data(from file) using Levenshtein distance and clusters(hierarchical clustering) the result. Clustering results are displayed with dendrogram.  
+
 ## Usage
-### 1. Prepare your data file
-### 2. Execute  
+1. Prepare your data file
+2. Run this program below
+```python
+# -*- coding: utf-8 -*-
+import sys
+from sensim_cluster.sensim_cluster import SensimCluster
+from matplotlib import pyplot as plt
+from scipy.cluster.hierarchy import dendrogram
+
+cluster = SensimCluster('YOUR_DATAFILE_PATH')
+ids = cluster.get_ids()
+result = cluster.ward()
+mod_ids = [id[-6:] for id in ids]
+r = dendrogram(result, p=100, truncate_mode='lastp', labels=mod_ids, leaf_rotation=90)
+print(r['leaves'])
+print(r['ivl'])
+plt.ylim(ymin=-10.0)
+plt.show()
+```
+
+## Docker
+```
+# build image "sensim_cluster_image"
+docker build -t sensim_cluster_image .
+
+# run container "cluster_con"
+docker run --name cluster_con -t -i sensim_cluster_image
+```
+
+## sentences-similarity-cluster (Old Version)
+sim_cluster.py calculates the similarity of text data(from file) using Levenshtein distance and clusters(hierarchical clustering) the result. Clustering results are displayed with dendrogram.  
+
+#### Usage
+##### 1. Prepare your data file
+##### 2. Execute  
 ```
 python sim_cluster.py your_file
 ```
-## Example
-### 1. Prepare the data file
+#### Example
+##### 1. Prepare the data file
 ./data/dummydata.csv
 ```
 A,helloworld
@@ -17,11 +51,11 @@ D,hallowarld
 E,galloworld
 F,herroworld
 ```
-### 2. Execute
+#### 2. Execute
 ```
 python sim_cluster.py ./data/dummydata.csv
 ```
-### 3. Result
+#### 3. Result
 ![result](https://github.com/gentom/similarity-cluster/blob/master/img/hclustering_result.png)
 ```
 [['A', 'helloworld'], ['B', 'hallawerld'], ['C', 'helldwoody'], ['D', 'hallowarld'], ['E', 'galloworld'], ['F', 'herroworld']]
