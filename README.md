@@ -27,8 +27,8 @@ plt.show()
 # build from docker-compose.yml
 docker-compose build
 
-# run container
-docker-compose run
+# run container "app"
+docker-compose run app
 
 # kill container
 docker-compose kill
