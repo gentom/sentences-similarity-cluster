@@ -1,12 +1,12 @@
 version: '3'
 services:
-  sensim_cluster:
+  app:
     build: .
     environment:
       MPLCONFIGDIR: /etc
     volumes:
-      - .:/data-volume
-    working_dir: /data-volume
+      - .:/opt/data-volume
+    working_dir: /opt/data-volume
     entrypoint:
       - python
-      - /app/run.py
+      - /opt/app/run.py
