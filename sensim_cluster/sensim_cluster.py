@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import codecs
-from distance import levenshtein
+from editDist import levenshtein
 from scipy.cluster.hierarchy import linkage
 
 class SensimCluster:
