@@ -22,13 +22,19 @@ plt.ylim(ymin=-10.0)
 plt.show()
 ```
 
-## Docker
+## Docker-Compose
 ```
-# build image "sensim_cluster_image"
-docker build -t sensim_cluster_image .
+# build from docker-compose.yml
+docker-compose build
 
-# run container "cluster_con"
-docker run --name cluster_con -t -i sensim_cluster_image
+# run container
+docker-compose run
+
+# kill container
+docker-compose kill
+
+# delete container
+docker-compose rm
 ```
 
 ## sentences-similarity-cluster (Old Version)
