@@ -4,7 +4,7 @@ from sensim_cluster.sensim_cluster import SensimCluster
 from matplotlib import pyplot as plt
 from scipy.cluster.hierarchy import dendrogram
 
-cluster = SensimCluster(sys.argv[1])
+cluster = SensimCluster('./data/dummydata.csv')
 ids = cluster.get_ids()
 result = cluster.ward()
 mod_ids = [id[-6:] for id in ids]
