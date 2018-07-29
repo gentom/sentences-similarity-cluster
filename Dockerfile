@@ -18,9 +18,9 @@ WORKDIR /etc
 RUN echo "backend : Agg" >> matplotlibrc \
  && echo "font.family : Ricty Diminished" >> matplotlibrc
 
-WORKDIR /app
-COPY requirements.txt /app
+WORKDIR /opt/app
+COPY requirements.txt /opt/app
 RUN pip install -r requirements.txt
-COPY . /app
+COPY . /opt/app
 
 # CMD [ "python", "run.py" ]
